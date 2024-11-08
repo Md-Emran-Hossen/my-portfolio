@@ -1,10 +1,8 @@
-// import React from 'react';
-// import bannerImage from "../../public/images/banner.jpeg";
+
 import bannerRight from "../../public/images/bannerRight.svg";
-// import { saveAs } from "file-saver";
-// import { pdf } from "@react-pdf/renderer";
+
 import myResume from "../../public/resume/myCv.pdf";
-// import { Link } from "react-router-dom";
+
 
 const Banner = () => {
 
@@ -12,12 +10,6 @@ const Banner = () => {
     //     // window.location.href = "../../public/resume/myCv.pdf";
     //     location.assign("../../public/resume/myCv.pdf");
     //   }
-    
-    // const downloadPdf = async () => {
-    //     const fileName = 'resume.pdf';
-    //     const blob = await pdf(<myResume />).toBlob();
-    //     saveAs(blob, fileName);
-    //   };
 
     return (
         <div
