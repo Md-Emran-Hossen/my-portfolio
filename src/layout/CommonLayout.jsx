@@ -1,17 +1,17 @@
 // import React from 'react';
 
 import { Outlet } from "react-router-dom";
+// import Home from "../pages/Home";
 import Footer from "../shared/Footer";
-import Navbar from "../shared/NavBar";
+// import Navbar from "../shared/NavBar";
+// import Banner from "../shared/Banner";
 
 const CommonLayout = () => {
     return (
-        <div className="w-11/12 mx-auto bg-base-200">
-          
-            <Navbar></Navbar>
+        <div>
+            {/* <Home></Home> */}
             <Outlet></Outlet>
             <Footer></Footer>
-
         </div>
     );
 };
