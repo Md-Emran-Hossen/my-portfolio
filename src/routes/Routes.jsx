@@ -8,6 +8,8 @@ import Projects from "../pages/Projects";
 import Services from "../pages/Services";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
+import InsertTechnologies from "../dashboard/InsertTechnologies";
+import InsertProjectInfo from "../dashboard/InsertProjectInfo";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +41,16 @@ const router = createBrowserRouter([
     {
         path: "/dashboard",
         element: <DashboardLayout></DashboardLayout>,
+        children: [
+          {
+            path: "/dashboard/technologies",
+            element: <InsertTechnologies />,
+          },
+          {
+            path: "/dashboard/projects",
+            element: <InsertProjectInfo />,
+          },
+        ],
     },
   ]);
 
