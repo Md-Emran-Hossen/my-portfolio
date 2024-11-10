@@ -5,7 +5,17 @@
 // import Projects from "./Projects";
 // import Contact from "./Contact";
 
+import { useEffect, useState } from "react";
+
 const About = () => {
+    const [technologies, setTechnologies] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/technologies')
+            .then(res => res.json())
+            .then(data => setTechnologies(data));
+    });
+    console.log("Technology Data Found", technologies);
     return (
         <div>
             <p className="text-5xl font-bold text-center mt-10 p-10">About Me</p>
@@ -38,12 +48,47 @@ const About = () => {
 
 
             </div>
-             {/* <Navbar></Navbar>
-             <Banner></Banner> */}
-            {/* <About></About>
-            <Services></Services>
-            <Projects></Projects>
-            <Contact></Contact>  */}
+            {/* <div> */}
+            <div className="text-4xl font-bold text-center p-8">
+                <h2>Technologies</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-5 m-3">
+
+                {technologies.map((technology, index) => {
+                    return (
+                        <div key={index}
+                            className="card transition duration-300 ease-in-out hover:scale-110">
+
+                            {/* <div className="card shadow-xl mt-10"> */}
+
+                                <div className="flex bg-base-200 items-center pl-5">
+                                    <div>
+                                        <figure>
+                                            <img
+                                                src={technology.image}
+                                                alt={technology.technologyName}
+                                                className="w-12 rounded" />
+                                        </figure>
+                                    </div>
+
+                                    {/* &nbsp;  &nbsp; {technology.technologyName} */}
+                                    <div className="card-body pl-2">
+                                        <p>  {technology.technologyName}</p>
+
+                                        {/* <p><span className="font-bold"> Description: </span> {technologies.description.slice(0, 40)} </p> */}
+
+                                    </div>
+                                </div>
+
+                            {/* </div> */}
+                        </div>
+                    )
+                })}
+
+            </div>
+
+
+        {/* </div> */}
         </div>
     );
 };

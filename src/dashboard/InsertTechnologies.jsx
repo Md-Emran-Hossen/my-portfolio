@@ -1,7 +1,8 @@
 
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-hot-toast";
+
 
 const InsertTechnologies = () => {
 
@@ -77,7 +78,7 @@ const InsertTechnologies = () => {
                 const data = await result.json();
                 // console.log("Project Data Found", data);
                 if (data.insertedId) {
-                    console.log("Data object found:", data.insertedId);
+                    // console.log("Data object found:", data.insertedId);
                     toast.success(`${formData.technologyName} is added successfully`);
                     navigate('/dashboard');
                 } else {
