@@ -60,7 +60,7 @@ const Contact = () => {
                         </div>
                     </form>
                 </div>
-                <div className="w-full py-12 pr-3">
+                <div className="w-full py-12 px-2">
 
                     <p className="py-12 sm:text-left md:text-right text-xl">
                         <br /> <br />
@@ -87,10 +87,10 @@ const Contact = () => {
                                 <img src="https://img.icons8.com/doodle/40/000000/instagram-new--v2.png" alt="Instagram"></img>
                             </a>
 
-                            <a href="https://github.com//" target="_blank">
+                            <a href="https://github.com/Md-Emran-Hossen" target="_blank">
                                 <img src="https://img.icons8.com/doodle/40/000000/github--v1.png" alt="GitHub"></img>
                             </a>
-                            <a href="https://www.linkedin.com/" target="_blank">
+                            <a href="https://www.linkedin.com/in/emran-hossen-843bb5116/" target="_blank">
                                 <img src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png" alt="LinkedIn"></img>
                             </a>
                         </div>

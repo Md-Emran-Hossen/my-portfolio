@@ -16,10 +16,13 @@ const Projects = () => {
 
     return (
         <div>
-            <div className="text-5xl font-bold text-center p-7">
+            <div className="text-4xl font-bold text-center py-5 my-5">
                 <h2>Projects</h2>
             </div>
-            <div className="w-11/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto">
+            <div className="pl-3 text-3xl font-semibold text-blue-600">
+                <p>What I Built</p>
+            </div>
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto">
 
                 {projects.map((project, index) => {
                     return (

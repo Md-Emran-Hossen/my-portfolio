@@ -10,6 +10,7 @@ import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import InsertTechnologies from "../dashboard/InsertTechnologies";
 import InsertProjectInfo from "../dashboard/InsertProjectInfo";
+import InsertServices from "../dashboard/InsertServices";
 
 const router = createBrowserRouter([
     {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/projects",
             element: <InsertProjectInfo />,
+          },
+          {
+            path: "/dashboard/services",
+            element: <InsertServices />,
           },
         ],
     },
