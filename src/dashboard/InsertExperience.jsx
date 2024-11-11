@@ -7,6 +7,8 @@ const InsertExperience = () => {
         designation: '',
         institute: '',
         jobDescription: '',
+        from: '',
+        to: '',
     });
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
@@ -41,6 +43,8 @@ const InsertExperience = () => {
             designation: formData.designation,
             institute: formData.institute,
             jobDescription: formData.jobDescription,
+            from: formData.from,
+            to:formData.to,
         };
 
         // Save Services information to the database
@@ -123,6 +127,44 @@ const InsertExperience = () => {
                             />
                         </div>
                         {errors.jobDescription && <p className='text-red-500 text-xs'>{errors.jobDescription}</p>}
+                    </div>
+
+                    <div className="md:flex md:items-center mb-6">
+                        <div className="md:w-1/3">
+                            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
+                                From:
+                            </label>
+                        </div>
+                        <div className="md:w-1/3">
+                            <input
+                                type="text"
+                                name="from"
+                                value={formData.from}
+                                onChange={handleInputChange}
+                                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-none w-full py-2 px-4 text-gray-700 
+          leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                            />
+                        </div>
+                        {errors.from && <p className='text-red-500 text-xs'>{errors.from}</p>}
+                    </div>
+
+                    <div className="md:flex md:items-center mb-6">
+                        <div className="md:w-1/3">
+                            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
+                                To:
+                            </label>
+                        </div>
+                        <div className="md:w-1/3">
+                            <input
+                                type="text"
+                                name="to"
+                                value={formData.to}
+                                onChange={handleInputChange}
+                                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-none w-full py-2 px-4 text-gray-700 
+          leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                            />
+                        </div>
+                        {errors.to && <p className='text-red-500 text-xs'>{errors.to}</p>}
                     </div>
 
                     <div className="md:flex md:items-center">
