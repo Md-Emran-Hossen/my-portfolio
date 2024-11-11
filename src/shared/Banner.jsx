@@ -13,7 +13,7 @@ const Banner = () => {
     //   }
 
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero bg-gray-100 min-h-screen">
             <div className="hero-overlay bg-opacity-60"></div>
 
             <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-0">
@@ -28,8 +28,8 @@ const Banner = () => {
                         </Marquee>
                     </span>
                     <p className="mb-5 pt-5 px-2 text-black font-bold">
-                        I am a Front-End / Full-Stack Developer.
-                        I am currently working at CloudStok Technologies as a Front-End Developer
+                        I am a Front-End/ Back-End/ Full-Stack Developer.
+                        I am currently working at Upazila ICT Officer, DoICT, Parshuram, Feni.
                     </p>
                     {/* <button onClick={downloadFile} 
                             className="w-3/4 flex items-center 

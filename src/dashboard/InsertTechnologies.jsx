@@ -67,7 +67,7 @@ const InsertTechnologies = () => {
                 };
 
                 // Save Technology information to the database
-                const result = await fetch('http://localhost:5000/technologies', {
+                const result = await fetch('https://my-portfolio-server-blond.vercel.app/technologies', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

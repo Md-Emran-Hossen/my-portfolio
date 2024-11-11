@@ -4,7 +4,7 @@ const Education = () => {
     const [examinations, setExaminations] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/educations')
+        fetch('https://my-portfolio-server-blond.vercel.app/educations')
             .then(res => res.json())
             .then(data => setExaminations(data));
     });

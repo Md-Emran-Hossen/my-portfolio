@@ -9,7 +9,7 @@ const LoadAllExperiences = () => {
     const [experiences, setExperiences] = useState(loadedExperience);
 
     const handleDelete = (_id) => {
-        fetch(`http://localhost:5000/experience/${_id}`, {
+        fetch(`https://my-portfolio-server-blond.vercel.app/experience/${_id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

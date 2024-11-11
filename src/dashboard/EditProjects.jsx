@@ -4,7 +4,7 @@ import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 
 const EditProjects = () => {
     const loadedProject = useLoaderData();
-    console.log("Loaded Data:=", loadedProject);
+    // console.log("Loaded Data:=", loadedProject);
     const navigate = useNavigate();
 
     const handleEdit = (event) => {
@@ -20,7 +20,7 @@ const EditProjects = () => {
 
         console.log("Update Data Found", updatedProject);
 
-        fetch(`http://localhost:5000/project/${loadedProject._id}`, {
+        fetch(`https://my-portfolio-server-blond.vercel.app/project/${loadedProject._id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

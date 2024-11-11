@@ -9,7 +9,7 @@ const LoadAllTechnologies = () => {
 
     const handleDelete = (_id) => {
         console.log(_id);
-        fetch(`http://localhost:5000/technology/${_id}`, {
+        fetch(`https://my-portfolio-server-blond.vercel.app/technology/${_id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

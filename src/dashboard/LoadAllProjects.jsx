@@ -14,7 +14,7 @@ const LoadAllProjects = () => {
 
     const handleDelete = (_id) => {
         console.log(_id);
-        fetch(`http://localhost:5000/project/${_id}`, {
+        fetch(`https://my-portfolio-server-blond.vercel.app/project/${_id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

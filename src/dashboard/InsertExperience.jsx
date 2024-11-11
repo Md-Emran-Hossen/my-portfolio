@@ -48,7 +48,7 @@ const InsertExperience = () => {
         };
 
         // Save Services information to the database
-        const result = await fetch('http://localhost:5000/experiences', {
+        const result = await fetch('https://my-portfolio-server-blond.vercel.app/experiences', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

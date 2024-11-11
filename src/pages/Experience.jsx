@@ -4,7 +4,7 @@ const Experience = () => {
     const [experiences, setExperiences] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/experiences')
+        fetch('https://my-portfolio-server-blond.vercel.app/experiences')
             .then(res => res.json())
             .then(data => setExperiences(data));
     });

@@ -10,7 +10,7 @@ const LoadAllEducationInfo = () => {
     const [educations, setEducations] = useState(loadedEducations);
 
     const handleDelete = (_id) => {
-        fetch(`http://localhost:5000/education/${_id}`, {
+        fetch(`https://my-portfolio-server-blond.vercel.app/education/${_id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

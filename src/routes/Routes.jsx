@@ -84,32 +84,32 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/allProjects",
             element: <LoadAllProjects></LoadAllProjects>,
-            loader: () => fetch("http://localhost:5000/projects"),
+            loader: () => fetch("https://my-portfolio-server-blond.vercel.app/projects"),
           },
           {
             path: "/dashboard/project/:id",
             element: <EditProjects></EditProjects>,
-            loader: ({params}) => fetch(`http://localhost:5000/project/${params.id}`),
+            loader: ({params}) => fetch(`https://my-portfolio-server-blond.vercel.app/project/${params.id}`),
           },
           {
             path: "/dashboard/allTechnologies",
             element: <LoadAllTechnologies></LoadAllTechnologies>,
-            loader: () => fetch("http://localhost:5000/technologies"),
+            loader: () => fetch("https://my-portfolio-server-blond.vercel.app/technologies"),
           },
           {
             path: "/dashboard/allServices",
             element: <LoadAllServices></LoadAllServices>,
-            loader: () => fetch("http://localhost:5000/services"),
+            loader: () => fetch("https://my-portfolio-server-blond.vercel.app/services"),
           },
           {
             path: "/dashboard/allExaminations",
             element: <LoadAllEducationInfo></LoadAllEducationInfo>,
-            loader: () => fetch("http://localhost:5000/educations"),
+            loader: () => fetch("https://my-portfolio-server-blond.vercel.app/educations"),
           },
           {
             path: "/dashboard/allExperience",
             element: <LoadAllExperiences></LoadAllExperiences>,
-            loader: () => fetch("http://localhost:5000/experiences"),
+            loader: () => fetch("https://my-portfolio-server-blond.vercel.app/experiences"),
           },
         ],
     },
