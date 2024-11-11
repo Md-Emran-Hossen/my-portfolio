@@ -22,12 +22,12 @@ const Projects = () => {
             <div className="pl-3 text-3xl font-semibold text-blue-600">
                 <p>What I Built</p>
             </div>
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto">
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
 
                 {projects.map((project, index) => {
                     return (
                         <div key={index}
-                            className="card transition duration-300 ease-in-out hover:scale-110 ml-5">
+                            className="card transition duration-300 ease-in-out hover:scale-110 mx-5">
 
                             <div className="card bg-base-100 shadow-xl mt-10">
                                 <figure>

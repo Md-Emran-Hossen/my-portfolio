@@ -11,6 +11,16 @@ import Contact from "../pages/Contact";
 import InsertTechnologies from "../dashboard/InsertTechnologies";
 import InsertProjectInfo from "../dashboard/InsertProjectInfo";
 import InsertServices from "../dashboard/InsertServices";
+import LoadAllProjects from "../dashboard/LoadAllProjects";
+import EditProjects from "../dashboard/EditProjects";
+import LoadAllTechnologies from "../dashboard/LoadAllTechnologies";
+import LoadAllServices from "../dashboard/LoadAllServices";
+import Education from "../pages/Education";
+import Experience from "../pages/Experience";
+import InsertEducation from "../dashboard/InsertEducation";
+import InsertExperience from "../dashboard/InsertExperience";
+import LoadAllEducationInfo from "../dashboard/LoadAllEducationInfo";
+import LoadAllExperiences from "../dashboard/LoadAllExperiences";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +47,14 @@ const router = createBrowserRouter([
           path: "/services",
           element: <Services></Services>,
         },
+        {
+          path: "/education",
+          element: <Education></Education>,
+        },
+        {
+          path: "/experience",
+          element: <Experience></Experience>,
+        },
       ],
     },
     {
@@ -54,6 +72,44 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/services",
             element: <InsertServices />,
+          },
+          {
+            path: "/dashboard/education",
+            element: <InsertEducation />,
+          },
+          {
+            path: "/dashboard/experience",
+            element: <InsertExperience />,
+          },
+          {
+            path: "/dashboard/allProjects",
+            element: <LoadAllProjects></LoadAllProjects>,
+            loader: () => fetch("http://localhost:5000/projects"),
+          },
+          {
+            path: "/dashboard/project/:id",
+            element: <EditProjects></EditProjects>,
+            loader: ({params}) => fetch(`http://localhost:5000/project/${params.id}`),
+          },
+          {
+            path: "/dashboard/allTechnologies",
+            element: <LoadAllTechnologies></LoadAllTechnologies>,
+            loader: () => fetch("http://localhost:5000/technologies"),
+          },
+          {
+            path: "/dashboard/allServices",
+            element: <LoadAllServices></LoadAllServices>,
+            loader: () => fetch("http://localhost:5000/services"),
+          },
+          {
+            path: "/dashboard/allExaminations",
+            element: <LoadAllEducationInfo></LoadAllEducationInfo>,
+            loader: () => fetch("http://localhost:5000/educations"),
+          },
+          {
+            path: "/dashboard/allExperience",
+            element: <LoadAllExperiences></LoadAllExperiences>,
+            loader: () => fetch("http://localhost:5000/experiences"),
           },
         ],
     },

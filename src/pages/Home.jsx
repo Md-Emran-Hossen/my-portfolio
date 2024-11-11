@@ -1,4 +1,4 @@
-import Navbar from "../shared/NavBar";
+
 import Banner from "../shared/Banner";
 import About from "./About";
 import Services from "./Services";
@@ -7,8 +7,7 @@ import Contact from "./Contact";
 
 const Home = () => {
     return (
-        <div>
-            <Navbar></Navbar>
+        <div>  
             <Banner></Banner>
             <About></About>
             <Services></Services>

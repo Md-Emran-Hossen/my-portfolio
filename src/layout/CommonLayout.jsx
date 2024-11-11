@@ -1,15 +1,14 @@
 // import React from 'react';
 
 import { Outlet } from "react-router-dom";
+import Navbar from "../shared/NavBar";
 // import Home from "../pages/Home";
 import Footer from "../shared/Footer";
-// import Navbar from "../shared/NavBar";
-// import Banner from "../shared/Banner";
 
 const CommonLayout = () => {
     return (
         <div>
-            {/* <Home></Home> */}
+            <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>

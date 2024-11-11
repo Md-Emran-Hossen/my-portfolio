@@ -22,6 +22,43 @@ const Dashboard = () => {
                         Services
                     </NavLink>
                 </li>
+                <li className="text-3xl font-bold text-green-500 m-2 p-2">
+                    <NavLink to="/dashboard/education">
+                        Education
+                    </NavLink>
+                </li>
+                <li className="text-3xl font-bold text-green-500 m-2 p-2">
+                    <NavLink to="/dashboard/experience">
+                        Experience
+                    </NavLink>
+                </li>
+
+                <li className="text-3xl font-bold text-green-500 m-2 p-2">
+                    <NavLink to="/dashboard/allProjects">
+                        All Projects
+                    </NavLink>
+                </li>
+                <li className="text-3xl font-bold text-green-500 m-2 p-2">
+                    <NavLink to="/dashboard/allTechnologies">
+                        All Technologies
+                    </NavLink>
+                </li>
+                <li className="text-3xl font-bold text-green-500 m-2 p-2">
+                    <NavLink to="/dashboard/allServices">
+                        All Services
+                    </NavLink>
+                </li>
+                <li className="text-3xl font-bold text-green-500 m-2 p-2">
+                    <NavLink to="/dashboard/allExaminations">
+                        All Examinations Information
+                    </NavLink>
+                </li>
+                <li className="text-3xl font-bold text-green-500 m-2 p-2">
+                    <NavLink to="/dashboard/allExperience">
+                        All Experience Information
+                    </NavLink>
+                </li>
+              
 
             </ul>
         </div>

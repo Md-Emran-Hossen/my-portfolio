@@ -2,28 +2,25 @@ import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
-const InsertServices = () => {
-
+const InsertExperience = () => {
     const [formData, setFormData] = useState({
-        serviceName: '',
-        image: null,
-        description: '',
+        designation: '',
+        institute: '',
+        jobDescription: '',
     });
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
-    const imageHostKey = import.meta.env.VITE_IMAGEBB_KEY;
-
     const validateForm = () => {
         const newErrors = {};
-        if (!formData.serviceName) {
-            newErrors.serviceName = "Service Name is Required";
+        if (!formData.designation) {
+            newErrors.designation = "Designation is Required";
         }
-        if (!formData.image) {
-            newErrors.image = "Photo is Required";
+        if (!formData.institute) {
+            newErrors.institute = "Institute is Required";
         }
-        if (!formData.description) {
-            newErrors.description = "Description is Required";
+        if (!formData.jobDescription) {
+            newErrors.jobDescription = "Result is Required";
         }
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -34,124 +31,98 @@ const InsertServices = () => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleFileChange = (e) => {
-        setFormData({ ...formData, image: e.target.files[0] });
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!validateForm()) {
             return;
         }
 
-        const image = formData.image;
-        const imageData = new FormData();
-        imageData.append('image', image);
-        const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`;
+        const experience = {
+            designation: formData.designation,
+            institute: formData.institute,
+            jobDescription: formData.jobDescription,
+        };
 
-        try {
-            const res = await fetch(url, {
-                method: 'POST',
-                body: imageData
-            });
-            const imgData = await res.json();
+        // Save Services information to the database
+        const result = await fetch('http://localhost:5000/experiences', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(experience)
+        })
 
-            if (imgData.success) {
-                const services = {
+        const data = await result.json();
 
-                    serviceName: formData.serviceName,
-                    image: imgData.data.url,
-                    description: formData.description,
-                };
-
-                // Save Services information to the database
-                const result = await fetch('http://localhost:5000/services', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json',
-                    },
-                    body: JSON.stringify(services)
-                })
-
-                const data = await result.json();
-                // console.log("Project Data Found", data);
-                if (data.insertedId) {
-                    // console.log("Data object found:", data.insertedId);
-                    toast.success(`${formData.serviceName} is added successfully`);
-                    navigate('/dashboard');
-                } else {
-                    toast.error('Failed to add service information.');
-                }
-            } else {
-                toast.error('Image upload failed. Please try again.');
-            }
-        } catch (error) {
-            console.error('Failed to add service information:', error);
-            toast.error('An error occurred while adding the services.');
+        if (data.insertedId) {
+            // console.log("Data object found:", data.insertedId);
+            toast.success(`${formData.designation} is added successfully`);
+            navigate('/dashboard/allExperience');
+        } else {
+            toast.error('Failed to add experience information.');
         }
     };
-
     return (
         <div>
-            <h2 className="text-3xl md:text-center font-bold mt-5 p-2 underline">Add Services Information</h2>
+            <h2 className="text-3xl md:text-center font-bold mt-5 p-2 underline">Add Experience Information</h2>
             <div className="mx-auto mt-5 p-2">
                 <form onSubmit={handleSubmit} className="w-full">
 
                     <div className="md:flex md:items-center mb-6">
                         <div className="md:w-1/3">
                             <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
-                                Service Name:
+                                Designation:
                             </label>
                         </div>
                         <div className="md:w-1/3">
                             <input
                                 type="text"
-                                name="serviceName"
-                                value={formData.serviceName}
+                                name="designation"
+                                value={formData.designation}
                                 onChange={handleInputChange}
                                 className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-none w-full py-2 px-4 text-gray-700 
           leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                             />
                         </div>
-                        {errors.serviceName && <p className='text-red-500 text-xs'>{errors.serviceName}</p>}
+                        {errors.designation && <p className='text-red-500 text-xs'>{errors.designation}</p>}
                     </div>
 
                     <div className="md:flex md:items-center mb-6">
                         <div className="md:w-1/3">
                             <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
-                                Image:
-                            </label>
-                        </div>
-                        <div className="md:w-1/3">
-                            <input
-                                type="file"
-                                name="image"
-                                onChange={handleFileChange}
-                                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-none w-full py-2 px-4 text-gray-700 
-          leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                            />
-                        </div>
-                        {errors.image && <p className='text-red-500 text-xs'>{errors.image}</p>}
-
-                    </div>
-
-                    <div className="md:flex md:items-center mb-6">
-                        <div className="md:w-1/3">
-                            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
-                                Description:
+                                Institute:
                             </label>
                         </div>
                         <div className="md:w-1/3">
                             <input
                                 type="text"
-                                name="description"
-                                value={formData.description}
+                                name="institute"
+                                value={formData.institute}
                                 onChange={handleInputChange}
                                 className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-none w-full py-2 px-4 text-gray-700 
           leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                             />
                         </div>
-                        {errors.description && <p className='text-red-500 text-xs'>{errors.description}</p>}
+                        {errors.institute && <p className='text-red-500 text-xs'>{errors.institute}</p>}
+                    </div>
+
+                    <div className="md:flex md:items-center mb-6">
+                        <div className="md:w-1/3">
+                            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
+                                Job Description:
+                            </label>
+                        </div>
+                        <div className="md:w-1/3">
+                            <input
+                                type="text"
+                                name="jobDescription"
+                                value={formData.jobDescription}
+                                onChange={handleInputChange}
+                                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-none w-full py-2 px-4 text-gray-700 
+          leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                            />
+                        </div>
+                        {errors.jobDescription && <p className='text-red-500 text-xs'>{errors.jobDescription}</p>}
                     </div>
 
                     <div className="md:flex md:items-center">
@@ -172,4 +143,4 @@ const InsertServices = () => {
     );
 };
 
-export default InsertServices;
+export default InsertExperience;
