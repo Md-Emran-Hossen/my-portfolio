@@ -16,9 +16,31 @@ const Experience = () => {
             <div className="grid grid-cols-1 mx-3 my-5">
                 <div
                     className="card transition duration-300 ease-in-out hover:scale-100">
-                    <div className="w-11/12 mx-auto bg-base-200 items-center rounded">
+                    <div className="w-11/12 mx-auto items-center rounded">
 
-                        <div className="container mx-auto p-4">
+                    <div className="overflow-x-auto">
+                    <table className="table table-xs">
+                        <thead>
+                            <tr className="bg-green-50 font-bold text-xl">
+                                <th>Designation</th>
+                                <th>Institute</th>
+                                <th>Job Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {experiences.map((experience) => (
+                                <tr>
+                                    <td>{experience.designation}</td>
+                                    <td>{experience.institute}</td>
+                                    <td>{experience.jobDescription}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>  
+
+                        {/* <div className="container mx-auto p-4">
                             <table className="min-w-full bg-white border">
                                 <thead>
                                     <tr className="bg-gray-100 text-gray-600 text-left">
@@ -67,7 +89,7 @@ const Experience = () => {
                                     ))}
                                 </tbody>
                             </table>
-                        </div>
+                        </div> */}
 
                         {/* <div className="card-body text-center text-black text-3xl font-bold">
                                     <p> 

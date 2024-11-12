@@ -19,7 +19,7 @@ const LoadAllProjects = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                    // console.log(data);
+                // console.log(data);
                 if (data.deletedCount) {
                     toast.success("Project data deleted Successfully", {
                         position: "top-right",
@@ -47,55 +47,39 @@ const LoadAllProjects = () => {
                         </button>
                     </Link>
                 </div>
-                <div className="container mx-auto p-4">
-                    <table className="min-w-full bg-white border">
+
+                <div className="overflow-x-auto">
+                    <table className="table table-xs">
                         <thead>
-                            <tr className="bg-gray-100 text-gray-600 text-left">
-                                <th className="py-2 px-4 border">
-                                    Project Name
-                                </th>
-                                <th className="py-2 px-4 border">
-                                    Image
-                                </th>
-                                <th className="py-2 px-4 border">
-                                    Project Live URL
-                                </th>
-                                <th className="py-2 px-4 border">
-                                    Git Hub URL
-                                </th>
-                                <th className="py-2 px-4 border">
-                                    Description
-                                </th>
+                            <tr className="bg-green-50 font-bold text-xl">
+                                <th>Project Name</th>
+                                <th>Image</th>
+                                <th>Project Live URL</th>
+                                <th>GitHub URL</th>
+                                <th>Description</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
+
                             {projects.map((project) => (
-                                <tr
-                                    key={project._id}
+                                <tr key={project._id}
                                     className="hover:bg-gray-100"
                                 >
-                                    <td className="py-2 px-4 border">
-                                        {project.projectName}
-                                    </td>                                
-                                    <td className="py-2 px-4 border">
+                                    <td>{project.projectName}</td>
+                                    <td>
                                         <img src={project.image} className="w-16"></img>
                                     </td>
-                                    <td className="py-2 px-4 border">
-                                        {project.projectLiveUrl}
-                                    </td>
-                                    <td className="py-2 px-4 border">
-                                        {project.gitHubUrl}
-                                    </td>
-                                    <td className="py-2 px-4 border">
-                                        {project.description.slice(0, 50)}
-                                    </td>
-                                    <td className="py-2 px-4 border">
+                                    <td>{project.projectLiveUrl}</td>
+                                    <td>{project.gitHubUrl}</td>
+                                    <td>{project.description}</td>
+                                    <td>
                                         <Link to={`/dashboard/project/${project._id}`}>
                                             <button className="btn btn-outline btn-accent m-1">
                                                 <HiPencilAlt /> Edit
                                             </button>
                                         </Link>
-                                        <button onClick={() => handleDelete(project._id)}
+                                        <button onClick={() => handleDelete(experience._id)}
                                             className="btn btn-outline btn-error m-1">
                                             <MdDelete />Delete
                                         </button>

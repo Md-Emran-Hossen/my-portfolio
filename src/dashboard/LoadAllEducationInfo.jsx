@@ -42,65 +42,33 @@ py-2 px-4 border border-blue-500 hover:border-transparent rounded-tl-md rounded-
                         </button>
                     </Link>
                 </div>
-                <div className="container mx-auto p-4">
-                    <table className="min-w-full bg-white border">
+
+                <div className="overflow-x-auto">
+                    <table className="table table-xs">
                         <thead>
-                            <tr className="bg-gray-100 text-gray-600 text-left">
-                                <th className="py-2 px-4 border">
-                                    Exam Title
-                                </th>
-                                <th className="py-2 px-4 border">
-                                    Subject
-                                </th>
-                                <th className="py-2 px-4 border">
-                                    Institute
-                                </th>
-                                <th className="py-2 px-4 border">
-                                    Result
-                                </th>
-                                <th className="py-2 px-4 border">
-                                    Passing Year
-                                </th>
-                                <th className="py-2 px-4 border">
-                                    Duration
-                                </th>
-                                <th className="py-2 px-5 border">
-                                    Action
-                                </th>
+                            <tr className="bg-green-50 font-bold text-xl">
+                                <th>Exam Title</th>
+                                <th>Subject</th>
+                                <th>Institute</th>
+                                <th>Result</th>
+                                <th>Passing Year</th>
+                                <th>Duration</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
+
                             {educations.map((education) => (
-                                <tr
-                                    key={education._id}
+                                <tr key={education._id}
                                     className="hover:bg-gray-100"
-                                >
-                                    <td className="py-2 px-4 border">
-                                        {education.examTitle}
-                                    </td>
-                                    <td className="py-2 px-4 border">
-                                        {education.subject}
-                                    </td>
-
-                                    <td className="py-2 px-4 border">
-                                        {education.institute}
-                                    </td>
-                                    <td className="py-2 px-4 border">
-                                        {education.result}
-                                    </td>
-
-                                    <td className="py-2 px-4 border">
-                                        {education.passingYear}
-                                    </td>
-                                    <td className="py-2 px-4 border">
-                                        {education.duration}
-                                    </td>
-                                    <td className="py-2 px-4 border">
-                                        {/* <Link to={`/dashboard/project/${project._id}`}>
-                                        <button className="btn btn-outline btn-accent m-1">
-                                            <HiPencilAlt /> Edit
-                                        </button>
-                                    </Link> */}
+                                >          
+                                    <td>{education.examTitle}</td>
+                                    <td>{education.subject}</td>
+                                    <td>{education.institute}</td>
+                                    <td>{education.result}</td>
+                                    <td>{education.passingYear}</td>
+                                    <td>{education.duration}</td>
+                                    <td>
                                         <button onClick={() => handleDelete(education._id)}
                                             className="btn btn-outline btn-error m-1">
                                             <MdDelete />Delete

@@ -39,10 +39,19 @@ const Projects = () => {
                                 <div className="card-body text-left pl-5">
                                     <p> <span className="font-bold">Project Name:</span> {project.projectName}</p>
 
-                                    <p><span className="font-bold"> Description: </span> {project.description.slice(0, 40)} </p>
+                                    <p><span className="font-bold" title={project.description}> Description: </span> {project.description.slice(0, 40)} </p>
 
                                     <div className="mt-5">
-                                        <Link to={`/project/${project._id}`}
+                                        <a href={project.projectLiveUrl} target="_blank"
+                                            className="flex items-center
+                                                       justify-center border border-transparent 
+                                                       text-base font-medium rounded-md text-white bg-blue-500
+                                                     hover:bg-blue-200 md:py-5 md:text-lg"
+                                        >
+                                            Read more
+                                            <BsArrowRightSquareFill className="inline ml-3" />
+                                        </a>
+                                        {/* <Link to={`/project/${project._id}`}
 
                                             className="w-3/4 flex items-center 
                                     justify-center px-8 py-3 border border-transparent 
@@ -52,8 +61,10 @@ const Projects = () => {
                                         >
                                             Read more
                                             <BsArrowRightSquareFill className="inline ml-3" />
-                                            {/* {String.fromCharCode(8592)}  */}
-                                        </Link>
+                                           
+                                        </Link> */}
+
+                                         {/* {String.fromCharCode(8592)}  */}
                                     </div>
                                 </div>
                             </div>

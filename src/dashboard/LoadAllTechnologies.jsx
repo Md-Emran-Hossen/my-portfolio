@@ -41,55 +41,39 @@ py-2 px-4 border border-blue-500 hover:border-transparent rounded-tl-md rounded-
                     </button>
                 </Link>
             </div>
-            <div className="container mx-auto p-4">
-                <table className="min-w-full bg-white border">
-                    <thead>
-                        <tr className="bg-gray-100 text-gray-600 text-left">
-                            <th className="py-2 px-4 border">
-                                Technology Name
-                            </th>
-                            <th className="py-2 px-4 border">
-                                Image
-                            </th>
-                            <th className="py-2 px-4 border">
-                                Description
-                            </th>
-                            <th className="py-2 px-4 border">
-                                Action
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {technologies.map((technology) => (
-                            <tr
-                                key={technology._id}
-                                className="hover:bg-gray-100"
-                            >
-                                <td className="py-2 px-4 border">
-                                    {technology.technologyName}
-                                </td>
-                                <td className="py-2 px-4 border">
-                                    <img src={technology.image} className="w-16"></img>
-                                </td>
-                                <td className="py-2 px-4 border">
-                                    {technology.description.slice(0, 50)}
-                                </td>
-                                <td className="py-2 px-4 border">
-                                    {/* <Link to={`/dashboard/project/${project._id}`}>
-                                        <button className="btn btn-outline btn-accent m-1">
-                                            <HiPencilAlt /> Edit
-                                        </button>
-                                    </Link> */}
-                                    <button onClick={() => handleDelete(service._id)}
-                                        className="btn btn-outline btn-error m-1">
-                                        <MdDelete />Delete
-                                    </button>
-                                </td>
+
+            <div className="overflow-x-auto">
+                    <table className="table table-xs">
+                        <thead>
+                            <tr className="bg-green-50 font-bold text-xl">
+                                <th> Technology Name</th>
+                                <th>Image</th>
+                                <th>Description</th>
+                                <th>Action</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+                        </thead>
+                        <tbody>
+
+                            {technologies.map((technology) => (
+                                <tr key={technology._id}
+                                    className="hover:bg-gray-100"
+                                >
+                                    <td>{technology.technologyName}</td>
+                                    <td>
+                                        <img src={technology.image} className="w-16"></img>
+                                    </td>
+                                    <td>{technology.description}</td>
+                                    <td className="flex">
+                                        <button onClick={() => handleDelete(technology._id)}
+                                            className="btn btn-outline btn-error m-1">
+                                            <MdDelete />Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>   
         </div>
     </div>
     );
