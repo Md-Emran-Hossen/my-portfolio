@@ -22,7 +22,7 @@ const About = () => {
             <diV className="p-3">
                 <h2 className="text-2xl font-bold text-blue-500">A bit about me</h2>
             </diV>
-            <div className="p-3">
+            <div className="p-3 text-justify">
                 <p>
                     I am a self-taught web developer and Mobile App Developer with experience 
                     in designing new features from ideation to production, 
@@ -37,7 +37,7 @@ const About = () => {
             <diV className="p-3">
                 <h2 className="text-2xl font-bold text-blue-500">Technologies and Tools</h2>
             </diV>
-            <div className="p-3">
+            <div className="p-3 text-justify">
                 <p>
                     Using a combination of cutting-edge technologies and reliable open-source 
                     software I build user-focused, performant apps and websites for smartphones, 
