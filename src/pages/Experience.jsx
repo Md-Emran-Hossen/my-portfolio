@@ -25,6 +25,8 @@ const Experience = () => {
                                 <th>Designation</th>
                                 <th>Institute</th>
                                 <th>Job Description</th>
+                                <th>From</th>
+                                <th>To</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,6 +36,8 @@ const Experience = () => {
                                     <td>{experience.designation}</td>
                                     <td>{experience.institute}</td>
                                     <td>{experience.jobDescription}</td>
+                                    <td>{experience.from}</td>
+                                    <td>{experience.to}</td>
                                 </tr>
                             ))}
                         </tbody>

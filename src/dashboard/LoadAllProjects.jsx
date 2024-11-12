@@ -79,7 +79,7 @@ const LoadAllProjects = () => {
                                                 <HiPencilAlt /> Edit
                                             </button>
                                         </Link>
-                                        <button onClick={() => handleDelete(experience._id)}
+                                        <button onClick={() => handleDelete(project._id)}
                                             className="btn btn-outline btn-error m-1">
                                             <MdDelete />Delete
                                         </button>

@@ -24,7 +24,7 @@ const Dashboard = () => {
                 </li>
                 <li className="text-3xl font-bold text-green-500 m-2 p-2">
                     <NavLink to="/dashboard/education">
-                        Education
+                        Examinations
                     </NavLink>
                 </li>
                 <li className="text-3xl font-bold text-green-500 m-2 p-2">
