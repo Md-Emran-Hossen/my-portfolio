@@ -53,7 +53,7 @@ const Banner = () => {
                         <a href="https://github.com/Md-Emran-Hossen" target="_blank">
                             <img src="https://img.icons8.com/doodle/40/000000/github--v1.png" alt="GitHub"></img>
                         </a>
-                        <a href="https://www.linkedin.com/in/emran-hossen-843bb5116/" target="_blank">
+                        <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
                             <img src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png" alt="LinkedIn"></img>
                         </a>
                     </div>
