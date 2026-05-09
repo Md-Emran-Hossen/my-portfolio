@@ -22,6 +22,7 @@ import InsertExperience from "../dashboard/InsertExperience";
 import LoadAllEducationInfo from "../dashboard/LoadAllEducationInfo";
 import LoadAllExperiences from "../dashboard/LoadAllExperiences";
 
+
 const router = createBrowserRouter([
     {
       path: "/",
