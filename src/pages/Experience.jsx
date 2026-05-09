@@ -32,7 +32,9 @@ const Experience = () => {
                         <tbody>
 
                             {experiences.map((experience) => (
-                                <tr>
+                                <tr key={experience._id}
+                                    className="hover:bg-gray-100"
+                                >
                                     <td>{experience.designation}</td>
                                     <td>{experience.institute}</td>
                                     <td>{experience.jobDescription}</td>

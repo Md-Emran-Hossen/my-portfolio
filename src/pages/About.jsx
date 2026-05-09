@@ -11,7 +11,7 @@ const About = () => {
     const [technologies, setTechnologies] = useState([]);
 
     useEffect(() => {
-        fetch('https://my-portfolio-server-blond.vercel.app/technologies')
+        fetch('http://localhost:5000/technologies')
             .then(res => res.json())
             .then(data => setTechnologies(data));
     });

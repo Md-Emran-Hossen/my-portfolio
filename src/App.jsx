@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="container text-red-600">
      
-      <h1>Welcome to my portfolio</h1>
+      <h1>Welcome to my Website </h1>
      
     </div>
   )

@@ -20,7 +20,7 @@ const Banner = () => {
                 <div className="text-neutral-content text-left py-10">
                     {/* <div className="w-full pl-5"> */}
                     <h1 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-3xl md:text-4xl">
-                        <span className="block text-black px-2">Hi, I am Md. Emran Hossen</span>
+                        <span className="block text-black px-2">Hi, I am Nahid Masuma Akter</span>
                     </h1>
                     <span className="block text-3xl font-bold text-blue-700 z-0 lg:inline mt-2">
                         <Marquee className="px-2">

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import toast from "react-hot-toast";
 import { MdDelete } from 'react-icons/md';
 import { Link, useLoaderData } from 'react-router-dom';
 
@@ -10,7 +11,7 @@ const LoadAllServices = () => {
 
     const handleDelete = (_id) => {
         console.log(_id);
-        fetch(`https://my-portfolio-server-blond.vercel.app/service/${_id}`, {
+        fetch(`http://localhost:5000/service/${_id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

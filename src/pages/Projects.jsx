@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { BsArrowRightSquareFill } from "react-icons/bs";
 
 const Projects = () => {
@@ -8,7 +8,7 @@ const Projects = () => {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        fetch('https://my-portfolio-server-blond.vercel.app/projects')
+        fetch('http://localhost:5000/projects')
             .then(res => res.json())
             .then(data => setProjects(data));
     });

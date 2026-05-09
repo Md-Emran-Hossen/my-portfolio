@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
 import { MdDelete } from 'react-icons/md';
 import { Link, useLoaderData } from 'react-router-dom';
 
@@ -9,7 +10,7 @@ const LoadAllTechnologies = () => {
 
     const handleDelete = (_id) => {
         console.log(_id);
-        fetch(`https://my-portfolio-server-blond.vercel.app/technology/${_id}`, {
+        fetch(`http://localhost:5000/technology/${_id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

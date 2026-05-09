@@ -20,7 +20,7 @@ const EditProjects = () => {
 
         console.log("Update Data Found", updatedProject);
 
-        fetch(`https://my-portfolio-server-blond.vercel.app/project/${loadedProject._id}`, {
+        fetch(`http://localhost:5000/project/${loadedProject._id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

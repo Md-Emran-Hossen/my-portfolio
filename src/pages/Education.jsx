@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MdDelete } from 'react-icons/md';
 
 const Education = () => {
     const [examinations, setExaminations] = useState([]);
 
     useEffect(() => {
-        fetch('https://my-portfolio-server-blond.vercel.app/educations')
+        fetch('http://localhost:5000/educations')
             .then(res => res.json())
             .then(data => setExaminations(data));
     });
@@ -35,7 +35,9 @@ const Education = () => {
                                 <tbody>
 
                                     {examinations.map((examination) => (
-                                        <tr>
+                                        <tr key={examination._id}
+                                            className="hover:bg-gray-100"
+                                        >
                                             <td>{examination.examTitle}</td>
                                             <td>{examination.subject}</td>
                                             <td>{examination.institute}</td>
